@@ -5,11 +5,6 @@
   "installCommand": "npm install",
   "regions": ["iad1"],
   "env": {
-    "GEMINI_API_KEY": "@gemini-api-key",
-    "QDRANT_URL": "@qdrant-url",
-    "QDRANT_API_KEY": "@qdrant-api-key",
-    "OPUS_API_KEY": "@opus-api-key",
-    "OPUS_WORKFLOW_ID": "@opus-workflow-id"
   },
   "build": {
     "env": {
