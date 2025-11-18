@@ -2,8 +2,6 @@
 
 > Your Intelligent Tourism Companion for Dubai - Powered by Google Gemini 2.5 Flash
 
-**Status:** ✅ Production Ready | **Demo:** http://localhost:3000
-
 A comprehensive AI-powered tourism application built for the LabLab.ai hackathon, featuring Google Gemini 2.5 Flash AI, Qdrant vector search, Clerk authentication, and intelligent rate limiting.
 
 ![Dubai Navigator AI](https://img.shields.io/badge/Next.js-16-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8) ![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-4285f4) ![Clerk](https://img.shields.io/badge/Auth-Clerk-6C47FF)
