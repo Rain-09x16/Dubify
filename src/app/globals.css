@@ -1,0 +1,395 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Dubai Navigator Luxury Color Theme */
+  /* Primary Colors */
+  --light-background: 210 20% 98%; /* #F9FAFB - Primary background */
+  --google-blue: 217 91% 60%; /* #1A73E8 - Accent/highlights */
+  --dark-grey-heading: 217 33% 17%; /* #1F2937 - Primary text */
+  --medium-grey: 217 10% 50%; /* #6B7280 - Secondary text */
+  --pure-white: 0 0% 100%; /* #FFFFFF - Containers/cards */
+
+  /* Semantic Color Mappings */
+  --background: var(--light-background);
+  --foreground: var(--dark-grey-heading);
+  --card: var(--pure-white);
+  --card-foreground: var(--dark-grey-heading);
+  --popover: var(--pure-white);
+  --popover-foreground: var(--dark-grey-heading);
+  --primary: 217 91% 60%; /* #1A73E8 - Google Blue */
+  --primary-foreground: var(--pure-white);
+  --secondary: 215 40% 92%; /* #DCE7F7 - Light blue tint */ /* Lighter cream for secondary elements */
+  --secondary-foreground: var(--dark-grey-heading);
+  --muted: 215 30% 94%; /* Muted cream */
+  --muted-foreground: var(--medium-grey);
+  --accent: 217 91% 60%; /* #1A73E8 */
+  --accent-foreground: var(--dark-grey-heading);
+  --destructive: 0 72% 51%; /* Red for errors */
+  --destructive-foreground: var(--pure-white);
+  --border: 215 20% 88%; /* Soft border */
+  --input: 215 20% 88%;
+  --ring: 217 91% 60%; /* Blue ring for focus states */
+  --radius: 0.625rem;
+
+  /* Chart colors using gold variations */
+  --chart-1: 217 91% 60%;
+  --chart-2: 221 83% 53%; /* Slightly darker blue */
+  --chart-3: 213 94% 68%; /* Lighter blue */
+  --chart-4: var(--medium-grey);
+  --chart-5: var(--dark-grey-heading);
+
+  /* Sidebar colors */
+  --sidebar: var(--pure-white);
+  --sidebar-foreground: var(--dark-grey-heading);
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: var(--dark-grey-heading);
+  --sidebar-accent: 215 40% 92%;
+  --sidebar-accent-foreground: var(--dark-grey-heading);
+  --sidebar-border: 215 20% 88%;
+  --sidebar-ring: 217 91% 60%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --border-radius: var(--radius);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode - using light theme for better visibility */
+    --background: 240 5% 98%; /* #F9FAFB - Light background */
+    --foreground: var(--dark-grey-heading);
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: var(--dark-grey-heading);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--dark-grey-heading);
+    --primary: 217 91% 60%; /* #1A73E8 - Google Blue */
+    --primary-foreground: var(--pure-white);
+    --secondary: 240 5% 98%; /* Light secondary */
+    --secondary-foreground: var(--dark-grey-heading);
+    --muted: 240 5% 98%;
+    --muted-foreground: 0 0% 42%; /* #6B7280 - Medium grey */
+    --accent: 217 91% 60%; /* #1A73E8 */
+    --accent-foreground: var(--pure-white);
+    --destructive: 0 72% 51%;
+    --destructive-foreground: var(--pure-white);
+    --border: 217 91% 60% / 0.2; /* Blue border with opacity */
+    --input: 0 0% 100%; /* White input */
+    --ring: 217 91% 60%; /* Blue ring for focus states */
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Sidebar layout transitions */
+@media (min-width: 1024px) {
+  main[data-sidebar-collapsed="true"] {
+    margin-left: 4rem;
+  }
+
+  main[data-sidebar-collapsed="false"] {
+    margin-left: 16rem;
+  }
+}
+
+.dark {
+  --background: 240 5% 98%; /* #F9FAFB - Light background */
+  --foreground: var(--dark-grey-heading);
+  --card: 0 0% 100%; /* White cards */
+  --card-foreground: var(--dark-grey-heading);
+  --popover: 0 0% 100%;
+  --popover-foreground: var(--dark-grey-heading);
+  --primary: 217 91% 60%; /* #1A73E8 - Google Blue */
+  --primary-foreground: var(--pure-white);
+  --secondary: 240 5% 98%; /* Light secondary */
+  --secondary-foreground: var(--dark-grey-heading);
+  --muted: 240 5% 98%;
+  --muted-foreground: 0 0% 42%; /* #6B7280 - Medium grey */
+  --accent: 217 91% 60%; /* #1A73E8 */
+  --accent-foreground: var(--pure-white);
+  --destructive: 0 72% 51%;
+  --destructive-foreground: var(--pure-white);
+  --border: 217 91% 60% / 0.2; /* Blue border with opacity */
+  --input: 0 0% 100%; /* White input */
+  --ring: 217 91% 60%; /* Blue ring for focus states */
+  --chart-1: 217 91% 60%;
+  --chart-2: 45 60% 45%;
+  --chart-3: 45 80% 65%;
+  --chart-4: 0 0% 65%; /* Improved contrast for dark mode charts */
+  --chart-5: 0 0% 80%;
+  --sidebar: 0 0% 12%;
+  --sidebar-foreground: var(--light-background);
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: var(--dark-grey-heading);
+  --sidebar-accent: 0 0% 18%;
+  --sidebar-accent-foreground: var(--light-background);
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 217 91% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Syntax Highlighting Styles (VS Code Dark+ Theme adapted for Dubai Navigator) */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0;
+  background: transparent;
+  color: #D4D4D4;
+}
+
+/* Comments */
+.hljs-comment,
+.hljs-quote {
+  color: #6A9955;
+  font-style: italic;
+}
+
+/* Keywords */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #C586C0;
+}
+
+/* Strings */
+.hljs-string {
+  color: #CE9178;
+}
+
+/* Numbers */
+.hljs-number {
+  color: #B5CEA8;
+}
+
+/* Functions */
+.hljs-title,
+.hljs-function,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #DCDCAA;
+}
+
+/* Variables */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attr {
+  color: #9CDCFE;
+}
+
+/* Types */
+.hljs-type,
+.hljs-class,
+.hljs-title.class_ {
+  color: #4EC9B0;
+}
+
+/* Operators */
+.hljs-operator,
+.hljs-symbol {
+  color: #D4D4D4;
+}
+
+/* Punctuation */
+.hljs-punctuation {
+  color: #D4D4D4;
+}
+
+/* Tags (HTML/XML) */
+.hljs-tag,
+.hljs-name {
+  color: #569CD6;
+}
+
+/* Attributes */
+.hljs-attribute {
+  color: #9CDCFE;
+}
+
+/* Regular expressions */
+.hljs-regexp {
+  color: #D16969;
+}
+
+/* Meta */
+.hljs-meta {
+  color: #1A73E8;
+}
+
+/* Deletion */
+.hljs-deletion {
+  color: #D16969;
+}
+
+/* Addition */
+.hljs-addition {
+  color: #B5CEA8;
+}
+
+/* Emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* Strong */
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* Markdown specific */
+.markdown-content {
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-content > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Smooth scrolling for chat */
+.chat-messages-container {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scrollbar for chat container */
+.chat-messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages-container::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 3px;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Message animation */
+@keyframes message-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.message-animate {
+  animation: message-slide-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
