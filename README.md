@@ -512,8 +512,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Qdrant** - For the excellent vector database
 - **Clerk** - For seamless authentication
 - **Vercel** - For the amazing Next.js hosting
-- **LabLab.ai** - For organizing the hackathon
-
 ---
 
 ## 📞 Contact
@@ -532,14 +530,12 @@ New to the technologies used in this project?
 
 - **Frontend Documentation**: [frontend/README.md](frontend/README.md)
 - **Backend Documentation**: [backend/README.md](backend/README.md)
-- **Backend Learning Guide**: [backend/LEARNING_GUIDE.md](backend/LEARNING_GUIDE.md) - Perfect for beginners!
-- **Backend Quick Start**: [backend/QUICKSTART.md](backend/QUICKSTART.md) - Step-by-step setup
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for the LabLab.ai Hackathon**
+**Built with ❤️**
 
 ⭐ Star this repo if you find it helpful!
 
