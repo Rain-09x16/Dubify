@@ -1,0 +1,426 @@
+import type { Location } from '@/lib/types';
+
+/**
+ * Sample Dubai Locations for MVP Demo
+ * In production, this would come from a database
+ */
+export const dubaiLocations: Location[] = [
+  {
+    id: 'loc_001',
+    name: 'Dubai Marina Walk',
+    category: 'entertainment',
+    description:
+      'Modern waterfront promenade with upscale restaurants, cafes, and stunning yacht views. Perfect for evening strolls and romantic dinners with spectacular sunset views over the marina.',
+    tags: [
+      'romantic',
+      'modern',
+      'luxury',
+      'waterfront',
+      'dining',
+      'sunset-views',
+      'pedestrian',
+      'family-friendly',
+    ],
+    latitude: 25.0805,
+    longitude: 55.141,
+    rating: 4.7,
+    reviewCount: 2341,
+    priceRange: '$$$',
+    imageUrl: '/images/dubai-marina.jpg',
+    address: 'Dubai Marina, Dubai, UAE',
+    verified: true,
+    halalCertified: true,
+    familyFriendly: true,
+    safetyScore: 95,
+    openingHours: {
+      monday: '24 hours',
+      tuesday: '24 hours',
+      wednesday: '24 hours',
+      thursday: '24 hours',
+      friday: '24 hours',
+      saturday: '24 hours',
+      sunday: '24 hours',
+    },
+    amenities: ['restaurants', 'cafes', 'shops', 'parking', 'restrooms'],
+  },
+  {
+    id: 'loc_002',
+    name: 'Burj Khalifa',
+    category: 'attraction',
+    description:
+      "The world's tallest building offering breathtaking panoramic views of Dubai from observation decks on the 124th, 125th, and 148th floors. A must-see architectural marvel and iconic Dubai landmark.",
+    tags: [
+      'iconic',
+      'observation-deck',
+      'luxury',
+      'modern',
+      'instagram-worthy',
+      'must-see',
+      'architecture',
+    ],
+    latitude: 25.1972,
+    longitude: 55.2744,
+    rating: 4.9,
+    reviewCount: 15234,
+    priceRange: '$$$$',
+    imageUrl: '/images/burj-khalifa.jpg',
+    address: '1 Sheikh Mohammed bin Rashid Blvd, Downtown Dubai',
+    website: 'https://www.burjkhalifa.ae',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 98,
+    openingHours: {
+      monday: '8:30 AM - 11:00 PM',
+      tuesday: '8:30 AM - 11:00 PM',
+      wednesday: '8:30 AM - 11:00 PM',
+      thursday: '8:30 AM - 11:00 PM',
+      friday: '8:30 AM - 12:00 AM',
+      saturday: '8:30 AM - 12:00 AM',
+      sunday: '8:30 AM - 11:00 PM',
+    },
+    amenities: ['elevator', 'viewing-deck', 'cafe', 'gift-shop', 'photography'],
+  },
+  {
+    id: 'loc_003',
+    name: 'Gold Souk',
+    category: 'shopping',
+    description:
+      'Traditional marketplace in Deira featuring hundreds of shops selling gold, jewelry, and precious stones. An authentic cultural experience with opportunities for bargaining and finding unique pieces.',
+    tags: [
+      'traditional',
+      'authentic',
+      'shopping',
+      'cultural',
+      'jewelry',
+      'bargaining',
+      'historic',
+    ],
+    latitude: 25.2681,
+    longitude: 55.2984,
+    rating: 4.5,
+    reviewCount: 3421,
+    priceRange: '$$',
+    imageUrl: '/images/gold-souk.jpg',
+    address: 'Sikkat al Khail Street, Deira, Dubai',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 90,
+    openingHours: {
+      monday: '10:00 AM - 10:00 PM',
+      tuesday: '10:00 AM - 10:00 PM',
+      wednesday: '10:00 AM - 10:00 PM',
+      thursday: '10:00 AM - 10:00 PM',
+      friday: '4:00 PM - 10:00 PM',
+      saturday: '10:00 AM - 10:00 PM',
+      sunday: '10:00 AM - 10:00 PM',
+    },
+    amenities: ['traditional-market', 'bargaining', 'currency-exchange'],
+  },
+  {
+    id: 'loc_004',
+    name: 'Jumeirah Beach',
+    category: 'beach',
+    description:
+      'Beautiful public beach with soft white sand, clear blue waters, and stunning views of Burj Al Arab. Perfect for swimming, sunbathing, and water sports. Family-friendly with facilities and lifeguards.',
+    tags: [
+      'beach',
+      'swimming',
+      'family-friendly',
+      'sunset',
+      'relaxation',
+      'water-sports',
+      'scenic',
+    ],
+    latitude: 25.2185,
+    longitude: 55.2386,
+    rating: 4.6,
+    reviewCount: 4521,
+    priceRange: '$',
+    imageUrl: '/images/jumeirah-beach.jpg',
+    address: 'Jumeirah Beach Residence, Dubai',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 92,
+    openingHours: {
+      monday: '6:00 AM - 10:00 PM',
+      tuesday: '6:00 AM - 10:00 PM',
+      wednesday: '6:00 AM - 10:00 PM',
+      thursday: '6:00 AM - 10:00 PM',
+      friday: '6:00 AM - 10:00 PM',
+      saturday: '6:00 AM - 10:00 PM',
+      sunday: '6:00 AM - 10:00 PM',
+    },
+    amenities: ['lifeguards', 'showers', 'restrooms', 'parking', 'playground'],
+  },
+  {
+    id: 'loc_005',
+    name: 'Al Fahidi Historical District',
+    category: 'museum',
+    description:
+      "Dubai's heritage quarter featuring traditional wind-tower architecture, art galleries, museums, and cultural centers. Experience old Dubai with authentic Emirati culture and history.",
+    tags: [
+      'historic',
+      'cultural',
+      'authentic',
+      'traditional',
+      'museums',
+      'art',
+      'educational',
+    ],
+    latitude: 25.2631,
+    longitude: 55.2972,
+    rating: 4.4,
+    reviewCount: 1823,
+    priceRange: '$',
+    imageUrl: '/images/al-fahidi.jpg',
+    address: 'Al Fahidi Street, Bur Dubai',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 93,
+    openingHours: {
+      monday: '8:00 AM - 8:00 PM',
+      tuesday: '8:00 AM - 8:00 PM',
+      wednesday: '8:00 AM - 8:00 PM',
+      thursday: '8:00 AM - 8:00 PM',
+      friday: '2:30 PM - 8:00 PM',
+      saturday: '8:00 AM - 8:00 PM',
+      sunday: '8:00 AM - 8:00 PM',
+    },
+    amenities: ['museums', 'galleries', 'cafes', 'photo-spots'],
+  },
+  {
+    id: 'loc_006',
+    name: 'The Dubai Mall',
+    category: 'shopping',
+    description:
+      "World's largest shopping mall featuring 1,200+ stores, Dubai Aquarium, ice rink, VR Park, and over 200 dining options. Complete entertainment destination for all ages.",
+    tags: [
+      'shopping',
+      'entertainment',
+      'family-friendly',
+      'luxury',
+      'dining',
+      'aquarium',
+      'modern',
+      'indoor',
+    ],
+    latitude: 25.1975,
+    longitude: 55.2797,
+    rating: 4.8,
+    reviewCount: 9834,
+    priceRange: '$$$$',
+    imageUrl: '/images/dubai-mall.jpg',
+    address: 'Financial Centre Road, Downtown Dubai',
+    website: 'https://thedubaimall.com',
+    verified: true,
+    halalCertified: true,
+    familyFriendly: true,
+    safetyScore: 97,
+    openingHours: {
+      monday: '10:00 AM - 12:00 AM',
+      tuesday: '10:00 AM - 12:00 AM',
+      wednesday: '10:00 AM - 12:00 AM',
+      thursday: '10:00 AM - 1:00 AM',
+      friday: '10:00 AM - 1:00 AM',
+      saturday: '10:00 AM - 1:00 AM',
+      sunday: '10:00 AM - 12:00 AM',
+    },
+    amenities: [
+      'shopping',
+      'dining',
+      'entertainment',
+      'aquarium',
+      'ice-rink',
+      'cinema',
+      'parking',
+    ],
+  },
+  {
+    id: 'loc_007',
+    name: 'Dubai Spice Souk',
+    category: 'market',
+    description:
+      'Traditional Arabian spice market offering exotic spices, herbs, dried fruits, nuts, and traditional perfumes. Aromatic and colorful shopping experience in old Dubai.',
+    tags: [
+      'traditional',
+      'authentic',
+      'spices',
+      'cultural',
+      'shopping',
+      'aromatic',
+      'bargaining',
+    ],
+    latitude: 25.2697,
+    longitude: 55.3014,
+    rating: 4.3,
+    reviewCount: 1456,
+    priceRange: '$',
+    imageUrl: '/images/spice-souk.jpg',
+    address: 'Deira, Dubai',
+    verified: true,
+    halalCertified: true,
+    familyFriendly: true,
+    safetyScore: 88,
+    openingHours: {
+      monday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+      tuesday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+      wednesday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+      thursday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+      friday: '4:00 PM - 10:00 PM',
+      saturday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+      sunday: '8:00 AM - 1:00 PM, 4:00 PM - 10:00 PM',
+    },
+    amenities: ['market', 'bargaining', 'traditional-products'],
+  },
+  {
+    id: 'loc_008',
+    name: 'Palm Jumeirah',
+    category: 'attraction',
+    description:
+      'Iconic palm-shaped artificial island featuring luxury hotels, residences, restaurants, and beaches. A marvel of modern engineering and a symbol of Dubai innovation.',
+    tags: [
+      'iconic',
+      'luxury',
+      'beach',
+      'hotels',
+      'modern',
+      'engineering',
+      'instagram-worthy',
+    ],
+    latitude: 25.1124,
+    longitude: 55.1390,
+    rating: 4.8,
+    reviewCount: 5643,
+    priceRange: '$$$$',
+    imageUrl: '/images/palm-jumeirah.jpg',
+    address: 'Palm Jumeirah, Dubai',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 94,
+    amenities: ['beaches', 'hotels', 'restaurants', 'water-sports'],
+  },
+  {
+    id: 'loc_009',
+    name: 'Dubai Fountain',
+    category: 'entertainment',
+    description:
+      'Spectacular choreographed fountain show with water jets shooting up to 500 feet high, synchronized to music and lights. Free daily performances at the base of Burj Khalifa.',
+    tags: [
+      'free',
+      'entertainment',
+      'romantic',
+      'evening',
+      'music',
+      'family-friendly',
+      'must-see',
+    ],
+    latitude: 25.1952,
+    longitude: 55.2745,
+    rating: 4.9,
+    reviewCount: 7821,
+    priceRange: '$',
+    imageUrl: '/images/dubai-fountain.jpg',
+    address: 'Sheikh Mohammed bin Rashid Blvd, Downtown Dubai',
+    verified: true,
+    halalCertified: false,
+    familyFriendly: true,
+    safetyScore: 96,
+    openingHours: {
+      monday: 'Shows every 30 min: 6:00 PM - 11:00 PM',
+      tuesday: 'Shows every 30 min: 6:00 PM - 11:00 PM',
+      wednesday: 'Shows every 30 min: 6:00 PM - 11:00 PM',
+      thursday: 'Shows every 30 min: 6:00 PM - 11:00 PM',
+      friday: 'Shows every 30 min: 1:30 PM, 6:00 PM - 11:00 PM',
+      saturday: 'Shows every 30 min: 1:30 PM, 6:00 PM - 11:00 PM',
+      sunday: 'Shows every 30 min: 6:00 PM - 11:00 PM',
+    },
+    amenities: ['free-show', 'viewing-areas', 'photography'],
+  },
+  {
+    id: 'loc_010',
+    name: 'Jumeirah Mosque',
+    category: 'mosque',
+    description:
+      'Beautiful traditional mosque open to non-Muslim visitors for guided cultural tours. Learn about Islamic culture, traditions, and architecture in welcoming environment.',
+    tags: [
+      'cultural',
+      'religious',
+      'traditional',
+      'architecture',
+      'educational',
+      'photography',
+    ],
+    latitude: 25.2319,
+    longitude: 55.2558,
+    rating: 4.7,
+    reviewCount: 2134,
+    priceRange: '$',
+    imageUrl: '/images/jumeirah-mosque.jpg',
+    address: 'Jumeirah Beach Road, Jumeirah 1',
+    verified: true,
+    halalCertified: true,
+    familyFriendly: true,
+    safetyScore: 95,
+    openingHours: {
+      monday: 'Closed',
+      tuesday: 'Closed',
+      wednesday: 'Closed',
+      thursday: 'Tours at 10:00 AM',
+      friday: 'Closed',
+      saturday: 'Tours at 10:00 AM',
+      sunday: 'Tours at 10:00 AM',
+    },
+    amenities: ['guided-tours', 'cultural-center', 'modest-dress-required'],
+  },
+];
+
+/**
+ * Get all locations
+ */
+export function getAllLocations(): Location[] {
+  return dubaiLocations;
+}
+
+/**
+ * Get location by ID
+ */
+export function getLocationById(id: string): Location | undefined {
+  return dubaiLocations.find((loc) => loc.id === id);
+}
+
+/**
+ * Get locations by category
+ */
+export function getLocationsByCategory(category: string): Location[] {
+  return dubaiLocations.filter((loc) => loc.category === category);
+}
+
+/**
+ * Get sample query suggestions
+ */
+export const sampleQueries = [
+  'romantic sunset spots',
+  'family-friendly attractions',
+  'authentic cultural experiences',
+  'luxury shopping destinations',
+  'budget-friendly activities',
+  'traditional markets',
+  'beach activities',
+  'Instagram-worthy locations',
+  'halal restaurants with a view',
+  'indoor activities for hot weather',
+];
+
+/**
+ * Get featured locations (top rated)
+ */
+export function getFeaturedLocations(limit = 5): Location[] {
+  return [...dubaiLocations]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, limit);
+}

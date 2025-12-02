@@ -17,11 +17,8 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 
-# Copy configuration files first
-COPY tsconfig.json next.config.ts package.json ./
-
-# Copy source code
-COPY src ./src
+# Copy all application files at once
+COPY . .
 
 # Set environment variables for build
 ENV NEXT_TELEMETRY_DISABLED=1
