@@ -59,22 +59,24 @@ export default function SafetyPage() {
     setResult(null);
 
     try {
-      const response = await fetch('/api/safety', {
+      // Call backend safety API
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/safety`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          latitude: lat,
-          longitude: lng,
-          areaName: name || undefined,
+          location_name: name || 'Unknown Location',
+          coordinates: { lat, lng },
+          time_of_day: 'current',
         }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        setResult(data.data);
+        setResult(data);
       } else {
-        throw new Error(data.error?.message || 'Safety check failed');
+        throw new Error(data.error || 'Safety check failed');
       }
     } catch (error) {
       console.error('Safety check error:', error);

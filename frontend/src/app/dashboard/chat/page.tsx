@@ -54,8 +54,9 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      // Call chat API
-      const response = await fetch('/api/chat', {
+      // Call backend chat API
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageText }),
@@ -67,12 +68,12 @@ export default function ChatPage() {
         const assistantMessage: Message = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          content: data.data.response,
+          content: data.response,
           timestamp: new Date(),
         };
         setMessages((prev) => [...prev, assistantMessage]);
       } else {
-        throw new Error(data.error?.message || 'Failed to get response');
+        throw new Error(data.error || 'Failed to get response');
       }
     } catch (error) {
       console.error('Chat error:', error);

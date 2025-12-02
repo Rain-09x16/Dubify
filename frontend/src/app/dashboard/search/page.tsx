@@ -24,7 +24,9 @@ export default function SearchPage() {
     setHasSearched(true);
 
     try {
-      const response = await fetch('/api/search', {
+      // Call backend search API
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: queryText }),
@@ -33,10 +35,10 @@ export default function SearchPage() {
       const data = await response.json();
 
       if (data.success) {
-        setResults(data.data.results);
-        setSearchTime(data.data.queryTimeMs);
+        setResults(data.results);
+        setSearchTime(data.count); // Backend returns count, not queryTimeMs
       } else {
-        throw new Error(data.error?.message || 'Search failed');
+        throw new Error(data.error || 'Search failed');
       }
     } catch (error) {
       console.error('Search error:', error);
